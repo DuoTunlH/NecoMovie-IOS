@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteViewController" customModule="NetfilxClone" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="JIR-Na-g8O" id="Lkm-RS-IiU"/>
+                <outlet property="navBar" destination="DCw-RM-lPw" id="gIN-4y-Y7B"/>
+                <outlet property="view" destination="U15-Ga-UgL" id="GcJ-fy-Cqf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="U15-Ga-UgL">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCw-RM-lPw" customClass="NavigationBarView" customModule="NetfilxClone" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="hpD-jx-qfy"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JIR-Na-g8O">
+                    <rect key="frame" x="0.0" y="109" width="393" height="743"/>
+                    <color key="backgroundColor" red="0.027450980390000001" green="0.023529411760000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="sbS-Ag-eAN">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="WJX-rO-E3r"/>
+            <color key="backgroundColor" red="0.47237998250000002" green="0.01071578823" blue="0.83123320339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DCw-RM-lPw" firstAttribute="top" secondItem="WJX-rO-E3r" secondAttribute="top" id="KW8-uc-5z9"/>
+                <constraint firstAttribute="trailing" secondItem="DCw-RM-lPw" secondAttribute="trailing" id="Yaz-0r-ICT"/>
+                <constraint firstAttribute="bottom" secondItem="JIR-Na-g8O" secondAttribute="bottom" id="d6r-hM-sBJ"/>
+                <constraint firstItem="JIR-Na-g8O" firstAttribute="leading" secondItem="WJX-rO-E3r" secondAttribute="leading" id="rGz-EY-gAi"/>
+                <constraint firstItem="JIR-Na-g8O" firstAttribute="top" secondItem="DCw-RM-lPw" secondAttribute="bottom" id="s2g-aD-Prd"/>
+                <constraint firstItem="WJX-rO-E3r" firstAttribute="trailing" secondItem="JIR-Na-g8O" secondAttribute="trailing" id="sWC-wL-0YX"/>
+                <constraint firstItem="DCw-RM-lPw" firstAttribute="leading" secondItem="U15-Ga-UgL" secondAttribute="leading" id="uK3-Xn-Z3V"/>
+            </constraints>
+            <point key="canvasLocation" x="-89.312977099236633" y="-62.676056338028175"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

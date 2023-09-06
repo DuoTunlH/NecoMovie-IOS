@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HeaderCollectionReusableView" customModule="NetfilxClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="257" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCE-KQ-IQu">
+                    <rect key="frame" x="0.0" y="0.0" width="257" height="110"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aT-Cy-OY7">
+                            <rect key="frame" x="5" y="0.0" width="252" height="110"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="5aT-Cy-OY7" secondAttribute="bottom" id="Blt-Ci-2Q7"/>
+                        <constraint firstItem="5aT-Cy-OY7" firstAttribute="top" secondItem="BCE-KQ-IQu" secondAttribute="top" id="Db8-gf-txr"/>
+                        <constraint firstItem="5aT-Cy-OY7" firstAttribute="leading" secondItem="BCE-KQ-IQu" secondAttribute="leading" constant="5" id="Erh-qV-GQO"/>
+                        <constraint firstAttribute="trailing" secondItem="5aT-Cy-OY7" secondAttribute="trailing" id="v9E-yM-gAs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="BCE-KQ-IQu" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="bYq-2r-tsw"/>
+                <constraint firstItem="BCE-KQ-IQu" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="bbV-Uf-kTh"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="BCE-KQ-IQu" secondAttribute="trailing" id="x09-fh-kpj"/>
+                <constraint firstAttribute="bottom" secondItem="BCE-KQ-IQu" secondAttribute="bottom" id="z2u-zq-lpO"/>
+            </constraints>
+            <connections>
+                <outlet property="titleLabel" destination="5aT-Cy-OY7" id="Mlo-Aa-8g2"/>
+            </connections>
+            <point key="canvasLocation" x="78.625954198473281" y="9.8591549295774659"/>
+        </collectionReusableView>
+    </objects>
+</document>

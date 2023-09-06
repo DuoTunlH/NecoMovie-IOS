@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBarView" customModule="NetfilxClone" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="e0D-Zw-tMh"/>
+                <outlet property="leftBtn" destination="MaM-h2-KV0" id="rc7-Op-mEC"/>
+                <outlet property="rightBtn1" destination="EoX-jK-tpW" id="4kN-Pt-MFl"/>
+                <outlet property="rightBtn2" destination="Azc-Lm-xLK" id="tq8-ZC-Pyn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="793" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaM-h2-KV0">
+                    <rect key="frame" x="20" y="0.0" width="83" height="300"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Neco"/>
+                    <connections>
+                        <action selector="leftBtnDidTap:" destination="-1" eventType="touchUpInside" id="Mcr-Od-Hsm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoX-jK-tpW">
+                    <rect key="frame" x="733" y="130" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Clc-XV-Lha"/>
+                        <constraint firstAttribute="width" secondItem="EoX-jK-tpW" secondAttribute="height" id="nMu-7u-626"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
+                        <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="large"/>
+                    </state>
+                    <connections>
+                        <action selector="rightBtn1DidTap:" destination="-1" eventType="touchUpInside" id="N4M-lo-RoE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-Lm-xLK">
+                    <rect key="frame" x="696.33333333333337" y="140" width="16.666666666666629" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Azc-Lm-xLK" secondAttribute="height" multiplier="1:1.2" id="iIy-Hp-eVD"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemBackgroundColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="Alarm">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.47237998250000002" green="0.01071578823" blue="0.83123320339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EoX-jK-tpW" secondAttribute="trailing" constant="20" id="GHx-Nq-pJt"/>
+                <constraint firstItem="EoX-jK-tpW" firstAttribute="centerY" secondItem="MaM-h2-KV0" secondAttribute="centerY" id="K7T-kS-sfU"/>
+                <constraint firstItem="EoX-jK-tpW" firstAttribute="height" secondItem="Azc-Lm-xLK" secondAttribute="height" multiplier="2" id="Wc8-nd-vAV"/>
+                <constraint firstAttribute="bottom" secondItem="MaM-h2-KV0" secondAttribute="bottom" id="Wp4-vF-fFU"/>
+                <constraint firstItem="Azc-Lm-xLK" firstAttribute="centerY" secondItem="MaM-h2-KV0" secondAttribute="centerY" id="bwX-fI-VSd"/>
+                <constraint firstItem="MaM-h2-KV0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="gQp-32-1fO"/>
+                <constraint firstItem="EoX-jK-tpW" firstAttribute="leading" secondItem="Azc-Lm-xLK" secondAttribute="trailing" constant="20" id="jZr-nq-Mly"/>
+                <constraint firstItem="MaM-h2-KV0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="q7g-Fi-VXv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="197.70992366412213" y="177.46478873239437"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Alarm" width="21.333333969116211" height="25"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

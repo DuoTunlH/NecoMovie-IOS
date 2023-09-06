@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SectionHeaderTableView" customModule="NetfilxClone" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="poF-gk-Tlv"/>
+                <outlet property="headerTitle" destination="oPv-qp-P2R" id="dJT-ta-HrV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="237" height="114"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPv-qp-P2R">
+                    <rect key="frame" x="5" y="0.0" width="53.666666666666664" height="114"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrt-xH-XJO">
+                    <rect key="frame" x="168" y="40.333333333333329" width="74" height="33.333333333333329"/>
+                    <color key="tintColor" red="0.65212088820000003" green="0.24911734460000001" blue="0.96118336920000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="See all">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="seeAllDidTap:" destination="-1" eventType="touchUpInside" id="oLG-U5-ytR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="Vrt-xH-XJO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="5" id="0P7-dm-WW7"/>
+                <constraint firstItem="oPv-qp-P2R" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="9ej-rh-1ES"/>
+                <constraint firstItem="Vrt-xH-XJO" firstAttribute="centerY" secondItem="oPv-qp-P2R" secondAttribute="centerY" id="BIV-lP-I3H"/>
+                <constraint firstAttribute="bottom" secondItem="oPv-qp-P2R" secondAttribute="bottom" id="PBP-b1-gvP"/>
+                <constraint firstItem="oPv-qp-P2R" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gme-b7-Fum"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="11.450381679389313" y="248.59154929577466"/>
+        </view>
+    </objects>
+</document>

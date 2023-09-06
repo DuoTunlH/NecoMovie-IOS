@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="NetfilxClone" customModuleProvider="target">
+            <connections>
+                <outlet property="navBar" destination="OmQ-um-xV4" id="zf2-O6-70K"/>
+                <outlet property="pageControl" destination="kbE-F1-NCJ" id="klq-Ir-BSt"/>
+                <outlet property="pagerView" destination="NsQ-25-MYy" id="4ha-o1-rLS"/>
+                <outlet property="tableView" destination="RzA-U0-Wh9" id="CDC-dT-u1z"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmQ-um-xV4" customClass="NavigationBarView" customModule="NetfilxClone" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="H7D-T8-2bX"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzA-U0-Wh9">
+                    <rect key="frame" x="0.0" y="70" width="414" height="666"/>
+                    <color key="backgroundColor" red="0.025626903400000001" green="0.025117792189999998" blue="0.1224013939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="fMI-GB-lPy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="402"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsQ-25-MYy" customClass="FSPagerView" customModule="NetfilxClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="32" width="414" height="345"/>
+                                <color key="tintColor" red="0.97168117761611938" green="0.91363650560379028" blue="0.89462512731552124" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbE-F1-NCJ" customClass="FSPageControl" customModule="NetfilxClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="382" width="414" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="jGM-DY-0Kn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kbE-F1-NCJ" firstAttribute="leading" secondItem="fMI-GB-lPy" secondAttribute="leading" id="Nul-fM-ISr"/>
+                            <constraint firstAttribute="trailing" secondItem="kbE-F1-NCJ" secondAttribute="trailing" id="aPS-Ex-lRV"/>
+                            <constraint firstAttribute="bottom" secondItem="kbE-F1-NCJ" secondAttribute="bottom" id="beL-3I-qZA"/>
+                            <constraint firstAttribute="trailing" secondItem="NsQ-25-MYy" secondAttribute="trailing" id="rx1-gN-ipG"/>
+                            <constraint firstItem="NsQ-25-MYy" firstAttribute="leading" secondItem="fMI-GB-lPy" secondAttribute="leading" id="uWU-vQ-hvc"/>
+                            <constraint firstItem="NsQ-25-MYy" firstAttribute="top" secondItem="fMI-GB-lPy" secondAttribute="top" constant="32" id="w6i-D9-xCc"/>
+                            <constraint firstItem="kbE-F1-NCJ" firstAttribute="top" secondItem="NsQ-25-MYy" secondAttribute="bottom" constant="5" id="wqN-GK-cJ2"/>
+                        </constraints>
+                    </view>
+                    <view key="tableFooterView" contentMode="scaleToFill" id="2gC-tg-Qps">
+                        <rect key="frame" x="0.0" y="1121" width="414" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </view>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.47237998250000002" green="0.01071578823" blue="0.83123320339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RzA-U0-Wh9" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="38g-Fi-thZ"/>
+                <constraint firstItem="RzA-U0-Wh9" firstAttribute="top" secondItem="OmQ-um-xV4" secondAttribute="bottom" id="B1U-BM-Tbs"/>
+                <constraint firstItem="OmQ-um-xV4" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="EMm-oR-NAK"/>
+                <constraint firstItem="OmQ-um-xV4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="I2E-ko-f1g"/>
+                <constraint firstItem="OmQ-um-xV4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aFh-Og-HDW"/>
+                <constraint firstItem="RzA-U0-Wh9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lgq-gt-h8b"/>
+                <constraint firstAttribute="bottom" secondItem="RzA-U0-Wh9" secondAttribute="bottom" id="wc2-9J-4qu"/>
+            </constraints>
+            <point key="canvasLocation" x="-62.318840579710148" y="-149.18478260869566"/>
+        </view>
+    </objects>
+</document>
