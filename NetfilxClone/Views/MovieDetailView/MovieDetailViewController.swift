@@ -22,9 +22,6 @@ class MovieDetailViewController: UIViewController {
         bind()
         input.send(.viewDidLoad)
     }
-    deinit {
-        print("deinit")
-    }
     func setupUI() {
         navBar.delegate = self
         similarCollectionView.delegate = self
@@ -45,32 +42,38 @@ class MovieDetailViewController: UIViewController {
                     print(error.localizedDescription)
                 case .isFavourite (let result):
                     self?.isFavourite.value = result
+                    self?.similarCollectionView.reloadData()
                 }
             }.store(in: &cancellables)
         
-        isFavourite
-            .receive(on: DispatchQueue.main)
-            .dropFirst()
-            .removeDuplicates()
-            .sink { Bool in
-                NotificationCenter.default.post(name: Notification.Name("favouriteChanged"), object: Bool)
-            }.store(in: &cancellables)
+//        isFavourite
+//            .receive(on: DispatchQueue.main)
+//            .dropFirst()
+//            .removeDuplicates()
+//            .sink { Bool in
+//                NotificationCenter.default.post(name: Notification.Name("favouriteChanged"), object: Bool)
+//            }.store(in: &cancellables)
         
-        let addToFavourite = Notification.Name("favouriteChanged")
-        
-        NotificationCenter.default
-            .publisher(for: addToFavourite, object: nil)
-            .receive(on: DispatchQueue.main)
-            .sink {[weak self] notification in
-                self?.isFavourite.value = notification.object as! Bool
-                self?.similarCollectionView.reloadData()
-            }.store(in: &cancellables)
+//        let addToFavourite = Notification.Name("favouriteChanged")
+//        
+//        NotificationCenter.default
+//            .publisher(for: addToFavourite, object: nil)
+//            .receive(on: DispatchQueue.main)
+//            .sink {[weak self] notification in
+//                self?.isFavourite.value = notification.object as! Bool
+//                self?.similarCollectionView.reloadData()
+//            }.store(in: &cancellables)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navBar.leftBtn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         navBar.leftBtn.setTitle("", for: .normal)
         navBar.leftBtn.isUserInteractionEnabled = true
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
     
 }
@@ -79,14 +82,14 @@ extension MovieDetailViewController: NavigationBarDelegate {
     func leftBtnDidTap() {
         navigationController?.popViewController(animated: true)
     }
-    func rightBtn1DidTap() {
+    func profileBtnDidTap() {
         let vc = ProfileViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension MovieDetailViewController: MovieDetailHeaderDelagate {
-    func addToFavourite() {
+    func favouriteBtnDidTap() {
         input.send(isFavourite.value ? .removeFromFavourite : .addToFavourite)
     }
 }
@@ -114,7 +117,6 @@ extension MovieDetailViewController: UICollectionViewDataSource, UICollectionVie
             header.movie = viewModel.movie
             header.delegate = self
             header.isFavourite = self.isFavourite.value
-            header.changeToFavouriteView()
             return header
         default:
             fatalError()

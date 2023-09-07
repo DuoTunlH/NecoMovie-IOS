@@ -13,6 +13,7 @@ import FirebaseFirestore
 class FavouriteViewModel {
     
     var movies = [Movie]()
+    var deleteList = Set<Int>()
     var cancellables = Set<AnyCancellable>()
     var output = PassthroughSubject<Output, Never>()
     var db = Firestore.firestore()
@@ -23,7 +24,10 @@ class FavouriteViewModel {
             case .viewDidLoad:
                 self?.fetchData()
             case .delete(let id):
-                self?.delete(id: id)            }
+                self?.delete(id: id)
+            case .remove:
+                self?.removeFromFavourite()
+            }
         }.store(in: &cancellables)
         return output.eraseToAnyPublisher()
     }
@@ -62,6 +66,26 @@ class FavouriteViewModel {
             }
         }
     }
+    func removeFromFavourite() {
+        let dispatchGroup = DispatchGroup()
+        for index in deleteList{
+            dispatchGroup.enter()
+            db.collection(Auth.auth().currentUser!.uid).whereField("id", isEqualTo: movies[index].id).getDocuments {
+                (querySnapshot,error) in
+                if let error = error {
+                    self.output.send(.fetchDidFail(error: error))
+                }
+                for document in querySnapshot!.documents {
+                    self.db.collection(Auth.auth().currentUser!.uid).document(document.documentID).delete()
+                    self.movies.remove(at: index)
+                    dispatchGroup.leave()
+                }
+            }
+        }
+        dispatchGroup.notify(queue: .main) {
+                self.output.send(.fetchDidSucceed)
+        }
+    }
     
     func delete(id: Int) {
         self.movies = movies.filter {
@@ -72,6 +96,7 @@ class FavouriteViewModel {
     enum Input {
         case viewDidLoad
         case delete(id: Int)
+        case remove
     }
     enum Output {
         case fetchDidFail(error: Error)

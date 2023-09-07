@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 protocol MovieDetailHeaderDelagate: AnyObject {
-    func addToFavourite()
+    func favouriteBtnDidTap()
 }
 
 class MovieDetailHeaderCollectionReusableView: UICollectionReusableView {
@@ -22,7 +22,11 @@ class MovieDetailHeaderCollectionReusableView: UICollectionReusableView {
     weak var delegate: MovieDetailHeaderDelagate?
     
     var movieTrailers = [Video]()
-    var isFavourite = false
+    var isFavourite = false {
+        didSet {
+            changeToFavouriteView()
+        }
+    }
     var movie: Movie? {
         didSet {
             config()
@@ -42,9 +46,9 @@ class MovieDetailHeaderCollectionReusableView: UICollectionReusableView {
         }
     }
     
-    @IBAction func addToFavourite(_ sender: UIButton) {
+    @IBAction func favouriteBtnDidTap(_ sender: UIButton) {
         if let delegate = delegate {
-            delegate.addToFavourite()
+            delegate.favouriteBtnDidTap()
         }
     }
     

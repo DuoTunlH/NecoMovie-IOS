@@ -61,7 +61,7 @@ class SearchViewController: UIViewController {
 extension SearchViewController: NavigationBarDelegate {
     func leftBtnDidTap() {
     }
-    func rightBtn1DidTap() {
+    func profileBtnDidTap() {
         let vc = ProfileViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

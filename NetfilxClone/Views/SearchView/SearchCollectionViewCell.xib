@@ -24,41 +24,59 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNL-bL-M6j">
-                        <rect key="frame" x="225.66666666666666" y="144.66666666666666" width="451.33333333333337" height="21.666666666666657"/>
+                        <rect key="frame" x="225.66666666666666" y="144.66666666666666" width="44.999999999999972" height="21.666666666666657"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                         <lineBreakStrategy key="lineBreakStrategy" pushOut="YES"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="u8G-ci-LYP">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cht-Sz-Bn8">
                         <rect key="frame" x="697" y="139" width="35" height="33.666666666666686"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="u8G-ci-LYP" secondAttribute="height" multiplier="1/1" id="85P-gR-8MA"/>
-                            <constraint firstAttribute="height" constant="35" id="C4F-0n-XZn"/>
+                            <constraint firstAttribute="width" secondItem="Cht-Sz-Bn8" secondAttribute="height" id="Rjo-Wk-k39"/>
+                            <constraint firstAttribute="height" constant="35" id="ySd-37-dPJ"/>
                         </constraints>
-                    </imageView>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                    </button>
+                    <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3A-Xa-jra">
+                        <rect key="frame" x="702" y="140.66666666666666" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="MEZ-gG-Lu5"/>
+                            <constraint firstAttribute="width" secondItem="Y3A-Xa-jra" secondAttribute="height" id="fgR-t0-zJh"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <backgroundConfiguration key="background" image="check" imageContentMode="scaleToFill"/>
+                        </buttonConfiguration>
+                    </button>
                 </subviews>
+                <color key="backgroundColor" red="0.027450980390000001" green="0.023529411760000001" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="Bzl-BB-u0e" firstAttribute="leading" secondItem="T9S-85-FJ2" secondAttribute="leading" constant="5" id="7fR-li-CgT"/>
                     <constraint firstItem="wNL-bL-M6j" firstAttribute="leading" secondItem="Bzl-BB-u0e" secondAttribute="trailing" constant="20" id="APw-V6-7cD"/>
                     <constraint firstItem="wNL-bL-M6j" firstAttribute="centerY" secondItem="Bzl-BB-u0e" secondAttribute="centerY" id="B7c-Jl-RrR"/>
-                    <constraint firstItem="u8G-ci-LYP" firstAttribute="centerY" secondItem="wNL-bL-M6j" secondAttribute="centerY" id="N6n-7U-RAY"/>
+                    <constraint firstItem="Y3A-Xa-jra" firstAttribute="centerY" secondItem="T9S-85-FJ2" secondAttribute="centerY" id="Bwx-4h-ohA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Y3A-Xa-jra" secondAttribute="trailing" id="Pml-IW-QYl"/>
+                    <constraint firstItem="Cht-Sz-Bn8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wNL-bL-M6j" secondAttribute="trailing" constant="20" id="RBK-mN-6E5"/>
                     <constraint firstItem="Bzl-BB-u0e" firstAttribute="top" secondItem="T9S-85-FJ2" secondAttribute="top" constant="5" id="cfK-gg-Kw8"/>
-                    <constraint firstItem="wNL-bL-M6j" firstAttribute="trailing" secondItem="u8G-ci-LYP" secondAttribute="trailing" constant="-55" id="k2S-go-WrB"/>
+                    <constraint firstItem="Cht-Sz-Bn8" firstAttribute="trailing" secondItem="T9S-85-FJ2" secondAttribute="trailingMargin" id="fya-Mw-BhY"/>
+                    <constraint firstItem="Cht-Sz-Bn8" firstAttribute="centerY" secondItem="wNL-bL-M6j" secondAttribute="centerY" id="jN5-jg-d4x"/>
                     <constraint firstAttribute="bottom" secondItem="Bzl-BB-u0e" secondAttribute="bottom" constant="5" id="q1m-Jh-amy"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="u8G-ci-LYP" secondAttribute="trailing" id="xz5-SN-RN1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="wAy-EK-qra"/>
             <connections>
-                <outlet property="playImage" destination="u8G-ci-LYP" id="7Ba-va-ngu"/>
+                <outlet property="playBtn" destination="Cht-Sz-Bn8" id="idV-Fj-qCE"/>
                 <outlet property="posterImageView" destination="Bzl-BB-u0e" id="VwD-nt-r2s"/>
+                <outlet property="selectBtn" destination="Y3A-Xa-jra" id="cV9-Ld-Mpc"/>
                 <outlet property="titleLabel" destination="wNL-bL-M6j" id="g2x-IM-pFd"/>
             </connections>
             <point key="canvasLocation" x="-48.854961832061065" y="82.74647887323944"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="check" width="512" height="512"/>
         <image name="play.circle" catalog="system" width="128" height="123"/>
     </resources>
 </document>

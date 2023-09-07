@@ -80,7 +80,6 @@ class ProfileViewModel {
         case logOut
     }
     enum Output {
-        case changePasswordDidSuccess
         case logOutDidSuccess
         case logOutDidFail(error: Error)
         case changeUsernameDidSuccess

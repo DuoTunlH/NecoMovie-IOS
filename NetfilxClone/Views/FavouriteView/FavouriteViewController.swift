@@ -14,6 +14,7 @@ class FavouriteViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     var viewModel = FavouriteViewModel()
     let input = PassthroughSubject<FavouriteViewModel.Input,Never>()
+    private var isDeleting = CurrentValueSubject<Bool,Never>(false)
     private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
@@ -21,8 +22,21 @@ class FavouriteViewController: UIViewController {
         setupUI()
         bind()
         input.send(.viewDidLoad)
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = true
+        self.collectionView?.addGestureRecognizer(lpgr)
     }
-    
+    @objc func handleLongPress(gestureRecognizer : UILongPressGestureRecognizer){
+        if gestureRecognizer.state == .began {
+            navBar.deleteBtn.isHidden = false
+            navBar.cancelBtn.isHidden = false
+            navBar.profileBtn.isHidden = true
+            navBar.notiBtn.isHidden = true
+            navBar.leftBtn.isHidden = true
+            isDeleting.value = true
+        }
+    }
     
     func setupUI() {
         navBar.delegate = self
@@ -47,6 +61,14 @@ class FavouriteViewController: UIViewController {
                 }
             }.store(in: &cancellables)
         
+        isDeleting
+            .receive(on: DispatchQueue.main)
+            .dropFirst()
+            .removeDuplicates()
+            .sink {[weak self] isDeleting in
+                    self?.collectionView.reloadData()
+            }.store(in: &cancellables)
+        
         let addToFavourite = Notification.Name("addToFavourite")
         let removeFromFavourite = Notification.Name("removeFromFavourite")
         
@@ -56,6 +78,7 @@ class FavouriteViewController: UIViewController {
             .sink {[weak self] notification in
                 self?.viewModel.movies.append(notification.object as! Movie)
                 self?.collectionView.reloadData()
+                self?.collectionView.scrollToItem(at: IndexPath(row: (self?.viewModel.movies.count ?? 1) - 1, section: 0), at: .bottom, animated: false)
             }.store(in: &cancellables)
         
         NotificationCenter.default
@@ -67,14 +90,25 @@ class FavouriteViewController: UIViewController {
     }
 }
 
+
 extension FavouriteViewController: NavigationBarDelegate {
-    func leftBtnDidTap() {
-    }
-    func rightBtn1DidTap() {
+    func profileBtnDidTap() {
         let vc = ProfileViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+    func cancelBtnDidTap() {
+        viewModel.deleteList.removeAll()
+        navBar.deleteBtn.isHidden = true
+        navBar.cancelBtn.isHidden = true
+        navBar.profileBtn.isHidden = false
+        navBar.notiBtn.isHidden = false
+        navBar.leftBtn.isHidden = false
+        isDeleting.value = false
+    }
+    func deleteBtnDidTap() {
+        input.send(.remove)
+        cancelBtnDidTap()
+    }
 }
 extension FavouriteViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -87,9 +121,30 @@ extension FavouriteViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCollectionViewCell
         cell.configure(movie: viewModel.movies[indexPath.row])
+        if isDeleting.value {
+            cell.playBtn.isHidden = true
+            cell.selectBtn.isHidden = false
+            return cell
+        }
+        cell.selectBtn.isHidden = true
+        cell.playBtn.isHidden = false
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if isDeleting.value {
+            let cell = collectionView.cellForItem(at: indexPath) as! SearchCollectionViewCell
+            cell.selectBtn.isSelected.toggle()
+            let checkMark = cell.selectBtn.isSelected ?
+            UIImage(systemName: "checkmark", withConfiguration: UIImage.SymbolConfiguration(scale: .large)) :
+            UIImage()
+            cell.selectBtn.setImage(checkMark, for: .normal)
+            if cell.selectBtn.isSelected {
+                viewModel.deleteList.insert(indexPath.row)
+                return
+            }
+            viewModel.deleteList.remove(indexPath.row)
+            return
+        }
         let vc = MovieDetailViewController()
         vc.viewModel.movie = viewModel.movies[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
@@ -104,7 +159,6 @@ extension FavouriteViewController: UICollectionViewDelegate, UICollectionViewDat
             fatalError()
         }
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 72)
     }

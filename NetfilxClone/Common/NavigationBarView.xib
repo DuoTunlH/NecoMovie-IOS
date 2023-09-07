@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,10 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBarView" customModule="NetfilxClone" customModuleProvider="target">
             <connections>
+                <outlet property="cancelBtn" destination="yXw-2c-csF" id="y8f-k8-iYx"/>
                 <outlet property="contentView" destination="i5M-Pr-FkT" id="e0D-Zw-tMh"/>
+                <outlet property="deleteBtn" destination="ZLg-T8-Zv0" id="LNz-hb-Oip"/>
                 <outlet property="leftBtn" destination="MaM-h2-KV0" id="rc7-Op-mEC"/>
-                <outlet property="rightBtn1" destination="EoX-jK-tpW" id="4kN-Pt-MFl"/>
-                <outlet property="rightBtn2" destination="Azc-Lm-xLK" id="tq8-ZC-Pyn"/>
+                <outlet property="notiBtn" destination="Azc-Lm-xLK" id="tq8-ZC-Pyn"/>
+                <outlet property="profileBtn" destination="EoX-jK-tpW" id="4kN-Pt-MFl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -43,7 +46,7 @@
                         <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="large"/>
                     </state>
                     <connections>
-                        <action selector="rightBtn1DidTap:" destination="-1" eventType="touchUpInside" id="N4M-lo-RoE"/>
+                        <action selector="profileBtnDidTap:" destination="-1" eventType="touchUpInside" id="N4M-lo-RoE"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-Lm-xLK">
@@ -57,14 +60,46 @@
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                     </state>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXw-2c-csF">
+                    <rect key="frame" x="685.66666666666663" y="130" width="87.333333333333371" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4Yo-kd-frL"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="cancelBtnDidTap:" destination="-1" eventType="touchUpInside" id="0sE-OI-RXZ"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLg-T8-Zv0">
+                    <rect key="frame" x="20" y="130" width="48" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="KCq-t7-vow"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <imageReference key="image" image="trash.fill" catalog="system" symbolScale="large"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="deleteBtnDidTap:" destination="-1" eventType="touchUpInside" id="kdH-S8-Ncq"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.47237998250000002" green="0.01071578823" blue="0.83123320339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ZLg-T8-Zv0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="C32-UC-58j"/>
+                <constraint firstItem="ZLg-T8-Zv0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EL1-VU-2jR"/>
                 <constraint firstAttribute="trailing" secondItem="EoX-jK-tpW" secondAttribute="trailing" constant="20" id="GHx-Nq-pJt"/>
                 <constraint firstItem="EoX-jK-tpW" firstAttribute="centerY" secondItem="MaM-h2-KV0" secondAttribute="centerY" id="K7T-kS-sfU"/>
+                <constraint firstItem="yXw-2c-csF" firstAttribute="centerY" secondItem="MaM-h2-KV0" secondAttribute="centerY" id="Sso-0c-8Vy"/>
                 <constraint firstItem="EoX-jK-tpW" firstAttribute="height" secondItem="Azc-Lm-xLK" secondAttribute="height" multiplier="2" id="Wc8-nd-vAV"/>
                 <constraint firstAttribute="bottom" secondItem="MaM-h2-KV0" secondAttribute="bottom" id="Wp4-vF-fFU"/>
+                <constraint firstAttribute="trailing" secondItem="yXw-2c-csF" secondAttribute="trailing" constant="20" id="ajp-6W-OJa"/>
                 <constraint firstItem="Azc-Lm-xLK" firstAttribute="centerY" secondItem="MaM-h2-KV0" secondAttribute="centerY" id="bwX-fI-VSd"/>
                 <constraint firstItem="MaM-h2-KV0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="gQp-32-1fO"/>
                 <constraint firstItem="EoX-jK-tpW" firstAttribute="leading" secondItem="Azc-Lm-xLK" secondAttribute="trailing" constant="20" id="jZr-nq-Mly"/>
@@ -77,6 +112,7 @@
     <resources>
         <image name="Alarm" width="21.333333969116211" height="25"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="trash.fill" catalog="system" width="119" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

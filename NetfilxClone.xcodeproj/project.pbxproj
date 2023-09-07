@@ -17,7 +17,6 @@
 		905959DD2AA740D8006381C3 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059597C2AA740D8006381C3 /* NavigationBarView.swift */; };
 		905959DE2AA740D8006381C3 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059597D2AA740D8006381C3 /* AppTextField.swift */; };
 		905959DF2AA740D8006381C3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059597E2AA740D8006381C3 /* TableViewCell.swift */; };
-		905959E02AA740D8006381C3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059597F2AA740D8006381C3 /* ViewModel.swift */; };
 		905959E12AA740D8006381C3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959802AA740D8006381C3 /* CollectionViewCell.swift */; };
 		905959E22AA740D8006381C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 905959812AA740D8006381C3 /* LaunchScreen.storyboard */; };
 		905959E32AA740D8006381C3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959832AA740D8006381C3 /* TableViewCell.xib */; };
@@ -90,7 +89,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		901277FE2A494352001FC8F5 /* NetfilxClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = NetfilxClone.app; path = "/Users/tungdd/Documents/NetfilxClone/build/Debug-iphoneos/NetfilxClone.app"; sourceTree = "<absolute>"; };
 		901278012A494352001FC8F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		901278032A494352001FC8F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9012780F2A494353001FC8F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 		9059597C2AA740D8006381C3 /* NavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		9059597D2AA740D8006381C3 /* AppTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		9059597E2AA740D8006381C3 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		9059597F2AA740D8006381C3 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		905959802AA740D8006381C3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		905959822AA740D8006381C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		905959832AA740D8006381C3 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -164,6 +161,7 @@
 		905959D42AA740D8006381C3 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		905959D52AA740D8006381C3 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		905959D62AA740D8006381C3 /* Sections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
+		90595A2B2AA887FF006381C3 /* NetfilxClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetfilxClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90832BA32A580B5C00DB325E /* NetflixCloneModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixCloneModel.xcdatamodel; sourceTree = "<group>"; };
 		90AB4B7F2A79FD330008D15A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				901278002A494352001FC8F5 /* NetfilxClone */,
+				90595A2B2AA887FF006381C3 /* NetfilxClone.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,19 +223,18 @@
 		9059597A2AA740D8006381C3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9059597B2AA740D8006381C3 /* NavigationBarView.xib */,
-				9059597C2AA740D8006381C3 /* NavigationBarView.swift */,
 				9059597D2AA740D8006381C3 /* AppTextField.swift */,
-				9059597E2AA740D8006381C3 /* TableViewCell.swift */,
-				9059597F2AA740D8006381C3 /* ViewModel.swift */,
-				905959802AA740D8006381C3 /* CollectionViewCell.swift */,
 				905959812AA740D8006381C3 /* LaunchScreen.storyboard */,
-				905959832AA740D8006381C3 /* TableViewCell.xib */,
+				905959802AA740D8006381C3 /* CollectionViewCell.swift */,
+				905959882AA740D8006381C3 /* CollectionViewCell.xib */,
+				905959862AA740D8006381C3 /* HeaderCollectionReusableView.swift */,
 				905959842AA740D8006381C3 /* HeaderCollectionReusableView.xib */,
 				905959852AA740D8006381C3 /* MainTabBarViewController.storyboard */,
-				905959862AA740D8006381C3 /* HeaderCollectionReusableView.swift */,
 				905959872AA740D8006381C3 /* MainTabBarViewController.swift */,
-				905959882AA740D8006381C3 /* CollectionViewCell.xib */,
+				9059597C2AA740D8006381C3 /* NavigationBarView.swift */,
+				9059597B2AA740D8006381C3 /* NavigationBarView.xib */,
+				9059597E2AA740D8006381C3 /* TableViewCell.swift */,
+				905959832AA740D8006381C3 /* TableViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -325,9 +323,9 @@
 		905959A82AA740D8006381C3 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
-				905959A92AA740D8006381C3 /* ProfileViewController.xib */,
 				905959AA2AA740D8006381C3 /* Parts */,
 				905959AF2AA740D8006381C3 /* ProfileViewController.swift */,
+				905959A92AA740D8006381C3 /* ProfileViewController.xib */,
 				905959B02AA740D8006381C3 /* ProfileViewModel.swift */,
 			);
 			path = ProfileView;
@@ -354,14 +352,14 @@
 		905959B12AA740D8006381C3 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				905959B22AA740D8006381C3 /* CollectionViewTableViewCell.xib */,
-				905959B32AA740D8006381C3 /* SectionHeaderTableView.swift */,
-				905959B42AA740D8006381C3 /* HomeViewModel.swift */,
-				905959B52AA740D8006381C3 /* HomeViewController.xib */,
-				905959B62AA740D8006381C3 /* HomeViewController.swift */,
-				905959B72AA740D8006381C3 /* CollectionViewTableViewCell.swift */,
-				905959B82AA740D8006381C3 /* SectionHeaderTableView.xib */,
 				905959B92AA740D8006381C3 /* Parts */,
+				905959B72AA740D8006381C3 /* CollectionViewTableViewCell.swift */,
+				905959B22AA740D8006381C3 /* CollectionViewTableViewCell.xib */,
+				905959B62AA740D8006381C3 /* HomeViewController.swift */,
+				905959B52AA740D8006381C3 /* HomeViewController.xib */,
+				905959B42AA740D8006381C3 /* HomeViewModel.swift */,
+				905959B32AA740D8006381C3 /* SectionHeaderTableView.swift */,
+				905959B82AA740D8006381C3 /* SectionHeaderTableView.xib */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -461,7 +459,7 @@
 				90595A232AA740F8006381C3 /* FirebaseStorage */,
 			);
 			productName = NetfilxClone;
-			productReference = 901277FE2A494352001FC8F5 /* NetfilxClone.app */;
+			productReference = 90595A2B2AA887FF006381C3 /* NetfilxClone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -556,7 +554,6 @@
 				905959FC2AA740D8006381C3 /* MovieDetailHeaderCollectionReusableView.swift in Sources */,
 				90595A152AA740D8006381C3 /* FavouriteViewController.swift in Sources */,
 				90595A1B2AA740D8006381C3 /* StringExtension.swift in Sources */,
-				905959E02AA740D8006381C3 /* ViewModel.swift in Sources */,
 				90595A002AA740D8006381C3 /* ChangePasswordViewController.swift in Sources */,
 				905959E62AA740D8006381C3 /* HeaderCollectionReusableView.swift in Sources */,
 				90595A0A2AA740D8006381C3 /* CollectionViewTableViewCell.swift in Sources */,

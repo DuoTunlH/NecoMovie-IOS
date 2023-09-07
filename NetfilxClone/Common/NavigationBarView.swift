@@ -12,14 +12,28 @@ import Combine
 
 protocol NavigationBarDelegate: AnyObject {
     func leftBtnDidTap()
-    func rightBtn1DidTap()
+    func profileBtnDidTap()
+    func deleteBtnDidTap()
+    func cancelBtnDidTap()
+}
+
+extension NavigationBarDelegate {
+    func leftBtnDidTap() {
+    }
+    func deleteBtnDidTap() {
+    }
+    
+    func cancelBtnDidTap() {
+    }
 }
 
 class NavigationBarView: UIView {
 
-    @IBOutlet weak var rightBtn1: UIButton!
+    @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var profileBtn: UIButton!
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var rightBtn2: UIButton!
+    @IBOutlet weak var notiBtn: UIButton!
     @IBOutlet weak var leftBtn: UIButton!
     weak var delegate: NavigationBarDelegate?
     var cancellables = Set<AnyCancellable>()
@@ -39,16 +53,16 @@ class NavigationBarView: UIView {
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        rightBtn1.tintColor = .white
-        rightBtn2.tintColor = .white
+        profileBtn.tintColor = .white
+        notiBtn.tintColor = .white
         
         if let url = Auth.auth().currentUser?.photoURL {
-            rightBtn1.sd_setBackgroundImage(with: url, for: .normal)
-            rightBtn1.setImage(UIImage(), for: .normal)
-            rightBtn1.layer.masksToBounds = true
-            rightBtn1.layer.cornerRadius = (rightBtn1.layer.bounds.width) / 2
-            rightBtn1.layer.borderColor = UIColor.white.cgColor
-            rightBtn1.layer.borderWidth = 0.5
+            profileBtn.sd_setBackgroundImage(with: url, for: .normal)
+            profileBtn.setImage(UIImage(), for: .normal)
+            profileBtn.layer.masksToBounds = true
+            profileBtn.layer.cornerRadius = (profileBtn.layer.bounds.width) / 2
+            profileBtn.layer.borderColor = UIColor.white.cgColor
+            profileBtn.layer.borderWidth = 0.5
         }
         
         let changeAvatar = Notification.Name("changeAvatar")
@@ -57,19 +71,29 @@ class NavigationBarView: UIView {
             .publisher(for: changeAvatar, object: nil)
             .receive(on: DispatchQueue.main)
             .sink {[weak self] notification in
-                self?.rightBtn1.setBackgroundImage(notification.object as? UIImage, for: .normal)
+                self?.profileBtn.setBackgroundImage(notification.object as? UIImage, for: .normal)
             }.store(in: &cancellables)
     }
 
-    @IBAction func rightBtn1DidTap(_ sender: UIButton) {
+    @IBAction func profileBtnDidTap(_ sender: UIButton) {
         if let delegate = delegate {
-            delegate.rightBtn1DidTap()
+            delegate.profileBtnDidTap()
         }
     }
     
     @IBAction func leftBtnDidTap(_ sender: UIButton) {
         if let delegate = delegate {
             delegate.leftBtnDidTap()
+        }
+    }
+    @IBAction func cancelBtnDidTap(_ sender: Any) {
+        if let delegate = delegate {
+            delegate.cancelBtnDidTap()
+        }
+    }
+    @IBAction func deleteBtnDidTap(_ sender: Any) {
+        if let delegate = delegate {
+            delegate.deleteBtnDidTap()
         }
     }
 }

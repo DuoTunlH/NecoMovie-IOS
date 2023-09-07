@@ -41,8 +41,8 @@ class ChangePasswordViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         navBar.leftBtn.setTitle(" Change password", for: .normal)
         navBar.leftBtn.titleLabel?.font = .boldSystemFont(ofSize: 24)
-        navBar.rightBtn1.isHidden = true
-        navBar.rightBtn2.isHidden = true
+        navBar.profileBtn.isHidden = true
+        navBar.notiBtn.isHidden = true
         navBar.leftBtn.isUserInteractionEnabled = true
         navBar.leftBtn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         self.tabBarController?.tabBar.isHidden = true
@@ -127,6 +127,6 @@ extension ChangePasswordViewController: NavigationBarDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    func rightBtn1DidTap() {
+    func profileBtnDidTap() {
     }
 }

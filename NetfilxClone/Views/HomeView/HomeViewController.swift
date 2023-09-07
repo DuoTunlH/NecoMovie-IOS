@@ -75,7 +75,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: NavigationBarDelegate {
     func leftBtnDidTap() {
     }
-    func rightBtn1DidTap() {
+    func profileBtnDidTap() {
         let vc = ProfileViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

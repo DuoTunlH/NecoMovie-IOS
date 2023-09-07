@@ -35,17 +35,19 @@ class ProfileViewController: UIViewController {
     }
     func bind() {
         let output = viewModel.transform(input: input.eraseToAnyPublisher())
-        output.sink { event in
+        output
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] event in
             switch event {
             case .logOutDidSuccess:
-                self.tabBarController?.navigationController?.popToRootViewController(animated: true)
+                self?.tabBarController?.navigationController?.popToRootViewController(animated: true)
             case .logOutDidFail(let error):
                 print("Error signing out: \(error.localizedDescription)")
             case .changeUsernameDidSuccess:
-                self.usernameLabel.text = self.usernameTextField.text
-                self.usernameTextField.isHidden = true
-                self.usernameLabel.isHidden = false
-                self.navBar.rightBtn1.isHidden = true
+                self?.usernameLabel.text = self?.usernameTextField.text
+                self?.usernameTextField.isHidden = true
+                self?.usernameLabel.isHidden = false
+                self?.navBar.profileBtn.isHidden = true
             case .changeUsernameDidFail(let error):
                 print("Error while changing username: \(error.localizedDescription)")
             case .changeAvatarDidFail(let error):
@@ -83,8 +85,8 @@ class ProfileViewController: UIViewController {
         if let url = Auth.auth().currentUser?.photoURL{
             avatarImage.sd_setImage(with: url)
         }
-        navBar.rightBtn1.isHidden = true
-        navBar.rightBtn2.isHidden = true
+        navBar.profileBtn.isHidden = true
+        navBar.notiBtn.isHidden = true
         navBar.leftBtn.isUserInteractionEnabled = true
         navBar.leftBtn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
     }
@@ -106,11 +108,11 @@ class ProfileViewController: UIViewController {
         usernameTextField.isHidden = false
         usernameTextField.becomeFirstResponder()
         usernameTextField.selectedTextRange = usernameTextField.textRange(from: usernameTextField.endOfDocument, to: usernameTextField.endOfDocument)
-        navBar.rightBtn1.isHidden = false
-        navBar.rightBtn1.layer.borderWidth = 0
-        navBar.rightBtn1.setBackgroundImage(UIImage(), for: .normal)
-        navBar.rightBtn1.setTitle("Save", for: .normal)
-        navBar.rightBtn1.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        navBar.profileBtn.isHidden = false
+        navBar.profileBtn.layer.borderWidth = 0
+        navBar.profileBtn.setBackgroundImage(UIImage(), for: .normal)
+        navBar.profileBtn.setTitle("Save", for: .normal)
+        navBar.profileBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
     }
     @IBAction func addAvatar(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -134,7 +136,7 @@ extension ProfileViewController: NavigationBarDelegate {
     func leftBtnDidTap() {
         navigationController?.popViewController(animated: true)
     }
-    func rightBtn1DidTap() {
+    func profileBtnDidTap() {
         view.endEditing(true)
         input.send(.changeUsername(username: usernameTextField.text ?? "Username"))
     }

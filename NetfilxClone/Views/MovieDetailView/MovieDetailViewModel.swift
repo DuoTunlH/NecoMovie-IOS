@@ -96,17 +96,8 @@ class MovieDetailViewModel {
     }
     
     func removeFromFavourite() {
-        db.collection(Auth.auth().currentUser!.uid).whereField("id", isEqualTo: movie!.id).getDocuments {
-            (querySnapshot,error) in
-            if let error = error {
-                self.output.send(.fetchDidFail(error: error))
-            }
-            for document in querySnapshot!.documents {
-                self.db.collection(Auth.auth().currentUser!.uid).document(document.documentID).delete()
-            }
-            self.output.send(.isFavourite(result: false))
-            NotificationCenter.default.post(name: Notification.Name("removeFromFavourite"), object: self.movie!.id)
-        }
+        self.output.send(.isFavourite(result: false))
+        NotificationCenter.default.post(name: Notification.Name("removeFromFavourite"), object: self.movie!.id)
     }
     enum Input {
         case viewDidLoad
