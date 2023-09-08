@@ -28,6 +28,11 @@ class CategoryViewController: UIViewController {
         navBar.leftBtn.titleLabel?.font = .boldSystemFont(ofSize: 28)
         navBar.leftBtn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
         navBar.leftBtn.isUserInteractionEnabled = true
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
     
     func setupUI() {

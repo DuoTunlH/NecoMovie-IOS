@@ -50,6 +50,7 @@ class SearchViewController: UIViewController {
                 switch event {
                 case .fetchDidSucceed:
                     self?.searchCollectionView.reloadData()
+                    self?.searchCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
                 case .fetchDidFail(let error):
                     print(error.localizedDescription)
                 }
@@ -131,6 +132,7 @@ extension SearchViewController: UISearchBarDelegate {
         if(searchText.isEmpty) {
             self.isSearching = false
             searchCollectionView.reloadData()
+            searchCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
         }
         else {
             self.isSearching = true
