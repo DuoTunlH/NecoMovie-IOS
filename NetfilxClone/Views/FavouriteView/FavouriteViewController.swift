@@ -41,7 +41,7 @@ class FavouriteViewController: UIViewController {
     func setupUI() {
         navBar.delegate = self
         navigationController?.isNavigationBarHidden = true
-        collectionView.register(UINib(nibName: "SearchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -119,7 +119,7 @@ extension FavouriteViewController: UICollectionViewDelegate, UICollectionViewDat
         return viewModel.movies.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MovieCollectionViewCell
         cell.configure(movie: viewModel.movies[indexPath.row])
         if isDeleting.value {
             cell.playBtn.isHidden = true
@@ -132,7 +132,7 @@ extension FavouriteViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if isDeleting.value {
-            let cell = collectionView.cellForItem(at: indexPath) as! SearchCollectionViewCell
+            let cell = collectionView.cellForItem(at: indexPath) as! MovieCollectionViewCell
             cell.selectBtn.isSelected.toggle()
             let checkMark = cell.selectBtn.isSelected ?
             UIImage(systemName: "checkmark", withConfiguration: UIImage.SymbolConfiguration(scale: .large)) :

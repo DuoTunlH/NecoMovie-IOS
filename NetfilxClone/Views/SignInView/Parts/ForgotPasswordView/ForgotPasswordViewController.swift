@@ -32,7 +32,6 @@ class ForgotPasswordViewController: UIViewController {
                 self.present(alert, animated: true)
             }
         }
-        
     }
     
 }

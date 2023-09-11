@@ -11,7 +11,7 @@ protocol SearchCollectionViewCellDelegate: AnyObject {
     func playBtnDidTap()
 }
 
-class SearchCollectionViewCell: UICollectionViewCell {
+class MovieCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var selectBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!

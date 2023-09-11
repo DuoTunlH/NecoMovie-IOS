@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class CollectionViewCell: UICollectionViewCell {
+class PosterCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var posterImageView: UIImageView!
     override func awakeFromNib() {

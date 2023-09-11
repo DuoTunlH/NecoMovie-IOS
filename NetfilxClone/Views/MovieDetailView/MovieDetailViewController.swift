@@ -14,7 +14,6 @@ class MovieDetailViewController: UIViewController {
     var viewModel = MovieDetailViewModel()
     var cancellables = Set<AnyCancellable>()
     let input = PassthroughSubject<MovieDetailViewModel.Input, Never>()
-    var isFavourite = CurrentValueSubject<Bool, Never>(false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +25,7 @@ class MovieDetailViewController: UIViewController {
         navBar.delegate = self
         similarCollectionView.delegate = self
         similarCollectionView.dataSource = self
-        similarCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        similarCollectionView.register(UINib(nibName: "PosterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PosterCollectionViewCell")
         similarCollectionView.register(UINib(nibName: "MovieDetailHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MovieDetailHeaderCollectionReusableView")
     }
     
@@ -40,29 +39,9 @@ class MovieDetailViewController: UIViewController {
                     self?.similarCollectionView.reloadData()
                 case .fetchDidFail(let error):
                     print(error.localizedDescription)
-                case .isFavourite (let result):
-                    self?.isFavourite.value = result
-                    self?.similarCollectionView.reloadData()
                 }
             }.store(in: &cancellables)
         
-//        isFavourite
-//            .receive(on: DispatchQueue.main)
-//            .dropFirst()
-//            .removeDuplicates()
-//            .sink { Bool in
-//                NotificationCenter.default.post(name: Notification.Name("favouriteChanged"), object: Bool)
-//            }.store(in: &cancellables)
-        
-//        let addToFavourite = Notification.Name("favouriteChanged")
-//        
-//        NotificationCenter.default
-//            .publisher(for: addToFavourite, object: nil)
-//            .receive(on: DispatchQueue.main)
-//            .sink {[weak self] notification in
-//                self?.isFavourite.value = notification.object as! Bool
-//                self?.similarCollectionView.reloadData()
-//            }.store(in: &cancellables)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +54,6 @@ class MovieDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
-    
 }
 
 extension MovieDetailViewController: NavigationBarDelegate {
@@ -90,7 +68,7 @@ extension MovieDetailViewController: NavigationBarDelegate {
 
 extension MovieDetailViewController: MovieDetailHeaderDelagate {
     func favouriteBtnDidTap() {
-        input.send(isFavourite.value ? .removeFromFavourite : .addToFavourite)
+        input.send(viewModel.isFavourite ? .removeFromFavourite : .addToFavourite)
     }
 }
 
@@ -100,7 +78,7 @@ extension MovieDetailViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = similarCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let cell = similarCollectionView.dequeueReusableCell(withReuseIdentifier: "PosterCollectionViewCell", for: indexPath) as! PosterCollectionViewCell
         cell.configure(with: viewModel.similarMovies[indexPath.row].poster_path ?? "")
         return cell
     }
@@ -116,7 +94,7 @@ extension MovieDetailViewController: UICollectionViewDataSource, UICollectionVie
             header.movieTrailers = viewModel.movieTrailers
             header.movie = viewModel.movie
             header.delegate = self
-            header.isFavourite = self.isFavourite.value
+            header.isFavourite = self.viewModel.isFavourite
             return header
         default:
             fatalError()

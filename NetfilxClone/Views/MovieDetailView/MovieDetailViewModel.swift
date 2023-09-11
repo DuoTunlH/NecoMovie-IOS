@@ -16,6 +16,7 @@ class MovieDetailViewModel {
     var movie: Movie? = nil
     var similarMovies = [Movie]()
     var output = PassthroughSubject<Output, Never>()
+    var isFavourite = false
     private var cancellables = Set<AnyCancellable>()
     var db = Firestore.firestore()
     
@@ -24,7 +25,6 @@ class MovieDetailViewModel {
             switch event {
             case .viewDidLoad:
                 self?.fetchData()
-                self?.checkFavourite()
             case .addToFavourite:
                 self?.addToFavourite()
             case .removeFromFavourite:
@@ -65,6 +65,19 @@ class MovieDetailViewModel {
                 self.output.send(.fetchDidFail(error: error))
             }
         }
+        dispatchGroup.enter()
+        db.collection(Auth.auth().currentUser!.uid).whereField("id", isEqualTo: movie!.id).getDocuments {
+            (querySnapshot,error) in
+            defer {
+                dispatchGroup.leave()
+            }
+            if let error = error {
+                self.output.send(.fetchDidFail(error: error))
+            }
+            if !querySnapshot!.isEmpty {
+                self.isFavourite = true
+            }
+        }
         
         dispatchGroup.notify(queue: .main) {
             self.output.send(.fetchDidSucceed)
@@ -78,25 +91,16 @@ class MovieDetailViewModel {
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                self.output.send(.isFavourite(result: true))
-                NotificationCenter.default.post(name: Notification.Name("addToFavourite"), object: self.movie)
+                self.isFavourite = true
+                self.output.send(.fetchDidSucceed)
+//                NotificationCenter.default.post(name: Notification.Name("addToFavourite"), object: self.movie)
             }
-        }
-    }
-    
-    func checkFavourite() {
-        db.collection(Auth.auth().currentUser!.uid).whereField("id", isEqualTo: movie!.id).getDocuments {
-            (querySnapshot,error) in
-            if let error = error {
-                self.output.send(.fetchDidFail(error: error))
-            }
-            !querySnapshot!.isEmpty ?
-            self.output.send(.isFavourite(result: true)) : self.output.send(.isFavourite(result: false))
         }
     }
     
     func removeFromFavourite() {
-        self.output.send(.isFavourite(result: false))
+        isFavourite = false
+        self.output.send(.fetchDidSucceed)
         NotificationCenter.default.post(name: Notification.Name("removeFromFavourite"), object: self.movie!.id)
     }
     enum Input {
@@ -107,6 +111,5 @@ class MovieDetailViewModel {
     enum Output {
         case fetchDidFail(error: Error)
         case fetchDidSucceed
-        case isFavourite(result: Bool)
     }
 }

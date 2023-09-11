@@ -17,14 +17,14 @@
 		905959DD2AA740D8006381C3 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059597C2AA740D8006381C3 /* NavigationBarView.swift */; };
 		905959DE2AA740D8006381C3 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059597D2AA740D8006381C3 /* AppTextField.swift */; };
 		905959DF2AA740D8006381C3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059597E2AA740D8006381C3 /* TableViewCell.swift */; };
-		905959E12AA740D8006381C3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959802AA740D8006381C3 /* CollectionViewCell.swift */; };
+		905959E12AA740D8006381C3 /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959802AA740D8006381C3 /* PosterCollectionViewCell.swift */; };
 		905959E22AA740D8006381C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 905959812AA740D8006381C3 /* LaunchScreen.storyboard */; };
 		905959E32AA740D8006381C3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959832AA740D8006381C3 /* TableViewCell.xib */; };
 		905959E42AA740D8006381C3 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959842AA740D8006381C3 /* HeaderCollectionReusableView.xib */; };
 		905959E52AA740D8006381C3 /* MainTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 905959852AA740D8006381C3 /* MainTabBarViewController.storyboard */; };
 		905959E62AA740D8006381C3 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959862AA740D8006381C3 /* HeaderCollectionReusableView.swift */; };
 		905959E72AA740D8006381C3 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959872AA740D8006381C3 /* MainTabBarViewController.swift */; };
-		905959E82AA740D8006381C3 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959882AA740D8006381C3 /* CollectionViewCell.xib */; };
+		905959E82AA740D8006381C3 /* PosterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959882AA740D8006381C3 /* PosterCollectionViewCell.xib */; };
 		905959EA2AA740D8006381C3 /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059598C2AA740D8006381C3 /* FSPagerView.swift */; };
 		905959EB2AA740D8006381C3 /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059598D2AA740D8006381C3 /* FSPageViewTransformer.swift */; };
 		905959EC2AA740D8006381C3 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9059598F2AA740D8006381C3 /* FSPagerViewCell.swift */; };
@@ -65,8 +65,8 @@
 		90595A0F2AA740D8006381C3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959BF2AA740D8006381C3 /* SearchViewController.swift */; };
 		90595A102AA740D8006381C3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959C02AA740D8006381C3 /* SearchViewModel.swift */; };
 		90595A112AA740D8006381C3 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959C12AA740D8006381C3 /* SearchViewController.xib */; };
-		90595A122AA740D8006381C3 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959C22AA740D8006381C3 /* SearchCollectionViewCell.swift */; };
-		90595A132AA740D8006381C3 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959C32AA740D8006381C3 /* SearchCollectionViewCell.xib */; };
+		90595A122AA740D8006381C3 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959C22AA740D8006381C3 /* MovieCollectionViewCell.swift */; };
+		90595A132AA740D8006381C3 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959C32AA740D8006381C3 /* MovieCollectionViewCell.xib */; };
 		90595A142AA740D8006381C3 /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959C52AA740D8006381C3 /* FavouriteViewModel.swift */; };
 		90595A152AA740D8006381C3 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905959C62AA740D8006381C3 /* FavouriteViewController.swift */; };
 		90595A162AA740D8006381C3 /* FavouriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 905959C72AA740D8006381C3 /* FavouriteViewController.xib */; };
@@ -98,14 +98,14 @@
 		9059597C2AA740D8006381C3 /* NavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		9059597D2AA740D8006381C3 /* AppTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		9059597E2AA740D8006381C3 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		905959802AA740D8006381C3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		905959802AA740D8006381C3 /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		905959822AA740D8006381C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		905959832AA740D8006381C3 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		905959842AA740D8006381C3 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		905959852AA740D8006381C3 /* MainTabBarViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarViewController.storyboard; sourceTree = "<group>"; };
 		905959862AA740D8006381C3 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		905959872AA740D8006381C3 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		905959882AA740D8006381C3 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		905959882AA740D8006381C3 /* PosterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PosterCollectionViewCell.xib; sourceTree = "<group>"; };
 		9059598C2AA740D8006381C3 /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
 		9059598D2AA740D8006381C3 /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewTransformer.swift; sourceTree = "<group>"; };
 		9059598E2AA740D8006381C3 /* FSPagerViewObjcCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPagerViewObjcCompat.h; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 		905959BF2AA740D8006381C3 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		905959C02AA740D8006381C3 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		905959C12AA740D8006381C3 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		905959C22AA740D8006381C3 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
-		905959C32AA740D8006381C3 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		905959C22AA740D8006381C3 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		905959C32AA740D8006381C3 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		905959C52AA740D8006381C3 /* FavouriteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
 		905959C62AA740D8006381C3 /* FavouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		905959C72AA740D8006381C3 /* FavouriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouriteViewController.xib; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 			children = (
 				9059597D2AA740D8006381C3 /* AppTextField.swift */,
 				905959812AA740D8006381C3 /* LaunchScreen.storyboard */,
-				905959802AA740D8006381C3 /* CollectionViewCell.swift */,
-				905959882AA740D8006381C3 /* CollectionViewCell.xib */,
+				905959802AA740D8006381C3 /* PosterCollectionViewCell.swift */,
+				905959882AA740D8006381C3 /* PosterCollectionViewCell.xib */,
 				905959862AA740D8006381C3 /* HeaderCollectionReusableView.swift */,
 				905959842AA740D8006381C3 /* HeaderCollectionReusableView.xib */,
 				905959852AA740D8006381C3 /* MainTabBarViewController.storyboard */,
@@ -235,6 +235,8 @@
 				9059597B2AA740D8006381C3 /* NavigationBarView.xib */,
 				9059597E2AA740D8006381C3 /* TableViewCell.swift */,
 				905959832AA740D8006381C3 /* TableViewCell.xib */,
+				905959C22AA740D8006381C3 /* MovieCollectionViewCell.swift */,
+				905959C32AA740D8006381C3 /* MovieCollectionViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -388,8 +390,6 @@
 				905959BF2AA740D8006381C3 /* SearchViewController.swift */,
 				905959C02AA740D8006381C3 /* SearchViewModel.swift */,
 				905959C12AA740D8006381C3 /* SearchViewController.xib */,
-				905959C22AA740D8006381C3 /* SearchCollectionViewCell.swift */,
-				905959C32AA740D8006381C3 /* SearchCollectionViewCell.xib */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -519,8 +519,8 @@
 				905959F32AA740D8006381C3 /* ForgotPasswordViewController.xib in Resources */,
 				905959DC2AA740D8006381C3 /* NavigationBarView.xib in Resources */,
 				90AB4B802A79FD330008D15A /* GoogleService-Info.plist in Resources */,
-				90595A132AA740D8006381C3 /* SearchCollectionViewCell.xib in Resources */,
-				905959E82AA740D8006381C3 /* CollectionViewCell.xib in Resources */,
+				90595A132AA740D8006381C3 /* MovieCollectionViewCell.xib in Resources */,
+				905959E82AA740D8006381C3 /* PosterCollectionViewCell.xib in Resources */,
 				90595A0B2AA740D8006381C3 /* SectionHeaderTableView.xib in Resources */,
 				905959F92AA740D8006381C3 /* SignUpViewController.xib in Resources */,
 				905959E52AA740D8006381C3 /* MainTabBarViewController.storyboard in Resources */,
@@ -547,7 +547,7 @@
 				905959EC2AA740D8006381C3 /* FSPagerViewCell.swift in Sources */,
 				90595A032AA740D8006381C3 /* ProfileViewController.swift in Sources */,
 				90595A172AA740D8006381C3 /* UpcomingViewController.swift in Sources */,
-				905959E12AA740D8006381C3 /* CollectionViewCell.swift in Sources */,
+				905959E12AA740D8006381C3 /* PosterCollectionViewCell.swift in Sources */,
 				905959E72AA740D8006381C3 /* MainTabBarViewController.swift in Sources */,
 				905959F62AA740D8006381C3 /* SignInViewController.swift in Sources */,
 				905959DE2AA740D8006381C3 /* AppTextField.swift in Sources */,
@@ -579,7 +579,7 @@
 				905959F52AA740D8006381C3 /* SignInViewModel.swift in Sources */,
 				90595A192AA740D8006381C3 /* UpcomingViewModel.swift in Sources */,
 				905959F12AA740D8006381C3 /* FSPagerCollectionView.swift in Sources */,
-				90595A122AA740D8006381C3 /* SearchCollectionViewCell.swift in Sources */,
+				90595A122AA740D8006381C3 /* MovieCollectionViewCell.swift in Sources */,
 				90595A102AA740D8006381C3 /* SearchViewModel.swift in Sources */,
 				905959ED2AA740D8006381C3 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				90595A042AA740D8006381C3 /* ProfileViewModel.swift in Sources */,
