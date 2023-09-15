@@ -68,6 +68,7 @@ class SignInViewModel {
                 UserDefaults.standard.set(self.email, forKey: "email")
                 self.output.send(.signInDidSuccess)
             }
+            self.isValid = true
         }
     }
     private func checkValid() {

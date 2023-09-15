@@ -35,9 +35,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoX-jK-tpW">
-                    <rect key="frame" x="733" y="130" width="40" height="40"/>
+                    <rect key="frame" x="736" y="131.66666666666666" width="37" height="37"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="Clc-XV-Lha"/>
+                        <constraint firstAttribute="width" constant="37" id="Clc-XV-Lha"/>
                         <constraint firstAttribute="width" secondItem="EoX-jK-tpW" secondAttribute="height" id="nMu-7u-626"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,7 +50,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-Lm-xLK">
-                    <rect key="frame" x="696.33333333333337" y="140" width="16.666666666666629" height="20"/>
+                    <rect key="frame" x="700.66666666666663" y="140.66666666666666" width="15.333333333333371" height="18.666666666666657"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Azc-Lm-xLK" secondAttribute="height" multiplier="1:1.2" id="iIy-Hp-eVD"/>
                     </constraints>

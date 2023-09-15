@@ -54,14 +54,14 @@ class SignUpViewController: UIViewController {
                         self?.confirmPasswordErrorLabel.text = error.errorDescription
                     case .unknowError, .networkError:
                         let okAction = UIAlertAction(title: "Close", style: .cancel)
-                        self?.showingAlert(title: "Sign up unsuccesfully",message: error.errorDescription!, action: okAction)
+                        self?.showingAlert(title: "Sign up unsuccessfully",message: error.errorDescription!, action: okAction)
                     }
                 case .signUpDidSuccess:
                     let okAction = UIAlertAction(title: "Go to login", style: UIAlertAction.Style.default) {
                         action in
                         self?.navigationController?.popViewController(animated: true)
                     }
-                    self?.showingAlert(title: "Sign up succesfully",message: "", action: okAction)
+                    self?.showingAlert(title: "Sign up successfully",message: "", action: okAction)
                 }
             }.store(in: &cancellables)
     }

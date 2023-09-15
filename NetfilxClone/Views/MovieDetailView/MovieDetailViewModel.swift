@@ -29,8 +29,6 @@ class MovieDetailViewModel {
                 self?.addToFavourite()
             case .removeFromFavourite:
                 self?.removeFromFavourite()
-            default:
-                break
             }
         }.store(in: &cancellables)
         return output.eraseToAnyPublisher()

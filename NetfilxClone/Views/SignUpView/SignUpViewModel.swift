@@ -53,6 +53,7 @@ class SignUpViewModel {
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            self.isValid = true
             if let error = error as? NSError {
                 switch error.code {
                 case AuthErrorCode.emailAlreadyInUse.rawValue:
@@ -128,7 +129,7 @@ class SignUpViewModel {
             case .incorrectConfirmPassword:
                 return NSLocalizedString("Confirm password incorrect", comment: "My error")
             case .invalidPassword:
-                return NSLocalizedString("Password at least 8 character", comment: "My error")
+                return NSLocalizedString("Password must be at least 8 characters long", comment: "My error")
             case .invalidEmail:
                 return NSLocalizedString("Please enter valid email address", comment: "My error")
             case .networkError:

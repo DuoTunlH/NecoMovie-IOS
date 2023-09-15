@@ -35,7 +35,7 @@
                         <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for a movie" translatesAutoresizingMaskIntoConstraints="NO" id="K1g-n2-b97">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="barTintColor" systemColor="secondaryLabelColor"/>
                             <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             <scopeButtonTitles>
                                 <string>Title</string>
@@ -83,6 +83,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -26,7 +26,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecq-XN-Lc3">
                                                 <rect key="frame" x="0.0" y="41" width="169" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
-                                                <color key="textColor" red="0.1237929836" green="0.123407267" blue="0.20941790939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.12549019607843137" green="0.12156862745098039" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFi-HY-bIP">
@@ -155,7 +155,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign In">
                                                     <backgroundConfiguration key="background" cornerRadius="9">
-                                                        <color key="backgroundColor" red="0.47237998250000002" green="0.01071578823" blue="0.83123320339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.47058823529411764" green="0.011764705882352941" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 </buttonConfiguration>

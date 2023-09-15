@@ -115,11 +115,6 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if isSearching, indexPath.row == viewModel.searchingMovies.value.count - 6 {
-//            input.send(.viewDidLoad)
-//        }
-//    }
     
 }
 

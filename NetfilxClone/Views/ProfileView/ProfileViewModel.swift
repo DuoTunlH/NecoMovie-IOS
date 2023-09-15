@@ -55,7 +55,7 @@ class ProfileViewModel {
         storage.child(directory).putData(avatar.pngData()!) {
             (_,error) in
             if let error {
-                self.output.send(.changeAvatarDidFail(error: error as! Error))
+                self.output.send(.changeAvatarDidFail(error: error ))
             }
             else {
                 self.storage.child(directory).downloadURL { url, error in
