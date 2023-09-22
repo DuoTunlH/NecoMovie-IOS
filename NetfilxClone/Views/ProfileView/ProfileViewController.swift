@@ -103,7 +103,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func editUsernameDidTap(_ sender: Any) {
-        usernameLabel.isHidden = true
+//        usernameLabel.isHidden = true
         usernameTextField.text = usernameLabel.text
         usernameTextField.isHidden = false
         usernameTextField.becomeFirstResponder()
